@@ -10,8 +10,14 @@ import dev.vp.utils.RenderUtil;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.Display;
 
+import java.awt.*;
+
 
 public class Vmod {
+
+    public static void ingameGUI() {
+        Minecraft.getMinecraft().fontRendererObj.drawStringWithShadow("vMod Early Alpha", 1, 1, Color.CYAN.getRGB());
+    }
 
     public static final Vmod INSTANCE = new Vmod();
 
@@ -27,6 +33,7 @@ public class Vmod {
 
 
     public void init() {
+        FileManager.init();
         discordRP.start();
         EventManager.register(this);
 
@@ -73,6 +80,7 @@ public class Vmod {
         //Setting Title
         Display.setTitle(getClientName() + getClientRel() + getClientVersion() + " | by " + getClientAuthor());
     }
+
 
 
     public String getClientName() {

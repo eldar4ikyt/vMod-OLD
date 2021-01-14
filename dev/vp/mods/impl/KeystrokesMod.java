@@ -96,8 +96,6 @@ public class KeystrokesMod extends ModDraggable {
 
     }
 
-    private ScreenPosition pos;
-
     private KeystrokesMode mode = KeystrokesMode.WASD_SPRINT_MOUSE;
 
     public void setMode(KeystrokesMode mode) {
@@ -150,16 +148,6 @@ public class KeystrokesMod extends ModDraggable {
             GL11.glEnable(GL11.GL_BLEND);
         }
         GL11.glPopMatrix();
-    }
-
-    @Override
-    public void save(ScreenPosition pos) {
-        this.pos = pos;
-    }
-
-    @Override
-    public ScreenPosition load() {
-        return pos;
     }
 
 }

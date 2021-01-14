@@ -5,8 +5,6 @@ import dev.vp.mods.ModDraggable;
 
 public class XYZMod extends ModDraggable {
 
-    private ScreenPosition pos;
-
     @Override
     public int getWidth() {
         return font.getStringWidth(getXYZString());
@@ -23,21 +21,12 @@ public class XYZMod extends ModDraggable {
     }
 
     private String getXYZString() {
-        return String.format("XYZ: [%.3f] / [%.3f] / [%.3f]",
+        return String.format("XYZ: §b[§f%.3f§b] §f/§b [§f%.3f§b] §f/§b [§f%.3f§b]",
                 mc.getRenderViewEntity().posX,
                 mc.getRenderViewEntity().getEntityBoundingBox().minY,
                 mc.getRenderViewEntity().posZ
         );
     }
 
-    @Override
-    public void save(ScreenPosition pos) {
-        this.pos = pos;
-    }
-
-    @Override
-    public ScreenPosition load() {
-        return pos;
-    }
 
 }

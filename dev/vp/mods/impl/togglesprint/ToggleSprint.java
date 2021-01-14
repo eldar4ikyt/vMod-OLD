@@ -6,7 +6,6 @@ import javafx.scene.paint.Color;
 
 public class ToggleSprint extends ModDraggable {
 
-    private ScreenPosition pos;
 
     //settings
     public boolean flyboost = true;
@@ -38,13 +37,4 @@ public class ToggleSprint extends ModDraggable {
         font.drawString(textToRender, pos.getAbsoluteX(), pos.getAbsoluteY(), -1);
     }
 
-    @Override
-    public void save(ScreenPosition pos) {
-        this.pos = pos;
-    }
-
-    @Override
-    public ScreenPosition load() {
-        return pos;
-    }
 }
